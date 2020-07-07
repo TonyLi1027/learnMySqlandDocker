@@ -24,8 +24,17 @@ public class DockerContainer {
 
             Statement stmt = conn.createStatement();
 
-            String updateQuery = "INSERT INTO contacts_tbl (contactID, contact_name, contact_lastname, contact_phoneNume, contact_email)" + "VALUES(2,'Deep','Li',1234567890,'haha@java.com')";
+            /*String updateQuery = "INSERT INTO contacts_tbl (contactID, contact_name, contact_lastname, contact_phoneNume, contact_email)" + "VALUES(3,'Deep','Li',1234567890,'haha@java.com')";
             stmt.executeUpdate(updateQuery);
+
+            updateQuery = "INSERT INTO contacts_tbl (contactID, contact_name, contact_lastname, contact_phoneNume, contact_email)" + "VALUES(4,'Aril','Lavri',12342314,'chasl@java.com')";
+            stmt.executeUpdate(updateQuery);
+
+            updateQuery = "INSERT INTO contacts_tbl (contactID, contact_name, contact_lastname, contact_phoneNume, contact_email)" + "VALUES(5,'Taylor','Swift',17151615,'tyswift@java.com')";
+            stmt.executeUpdate(updateQuery);
+
+            updateQuery = "INSERT INTO contacts_tbl (contactID, contact_name, contact_lastname, contact_phoneNume, contact_email)" + "VALUES(6,'Nick','Ming',90233334,'slalthai@java.com')";
+            stmt.executeUpdate(updateQuery);*/
 
             ResultSet rs = stmt.executeQuery(query);
 
