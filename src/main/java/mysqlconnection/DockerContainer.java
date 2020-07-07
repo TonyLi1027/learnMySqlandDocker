@@ -11,6 +11,7 @@ public class DockerContainer {
         final String USER = "root";
         final String PASS = "password";
         final String query = "SELECT * from contacts_tbl;";
+        int id = 2;
 
         Connection conn = null;
 
@@ -22,15 +23,25 @@ public class DockerContainer {
             System.out.println("Connected Successfully");
 
             Statement stmt = conn.createStatement();
+
+            String updateQuery = "INSERT INTO contacts_tbl (contactID, contact_name, contact_lastname, contact_phoneNume, contact_email)" + "VALUES(2,'Deep','Li',1234567890,'haha@java.com')";
+            stmt.executeUpdate(updateQuery);
+
             ResultSet rs = stmt.executeQuery(query);
+
+
 
             while(rs.next()){
                 System.out.println(rs.getInt(1));
                 System.out.println(rs.getString(2));
+                System.out.println(rs.getString(3));
+                System.out.println(rs.getString(4));
+                System.out.println(rs.getString(5));
             }
 
-            rs.close();
-            stmt.close();
+
+            //rs.close();
+            //stmt.close();
 
 
         }catch (SQLException e){
@@ -40,4 +51,5 @@ public class DockerContainer {
         }
 
     }
+
 }
