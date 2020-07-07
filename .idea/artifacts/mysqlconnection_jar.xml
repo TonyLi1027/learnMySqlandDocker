@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="mysqlconnection:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/mysqlconnection_jar</output-path>
+    <root id="archive" name="mysqlconnection.jar">
+      <element id="module-output" name="mysqlconnection" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/mysql-connector-java-8.0.16.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/protobuf-java-3.6.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

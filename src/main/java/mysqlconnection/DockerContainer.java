@@ -1,5 +1,6 @@
 package mysqlconnection;
 
+import javax.swing.*;
 import java.sql.*;
 
 public class DockerContainer {
@@ -12,6 +13,11 @@ public class DockerContainer {
         final String PASS = "password";
         final String query = "SELECT * from contacts_tbl;";
         int id = 2;
+        int[] contact_id;
+        String[] contact_name;
+        String[] contact_lastname;
+        String[] contact_phoneNume;
+        String[] contact_email;
 
         Connection conn = null;
 
@@ -46,6 +52,7 @@ public class DockerContainer {
                 System.out.println(rs.getString(3));
                 System.out.println(rs.getString(4));
                 System.out.println(rs.getString(5));
+                JOptionPane.showMessageDialog(null, rs.getInt(1)+" "+rs.getString(2));
             }
 
 
