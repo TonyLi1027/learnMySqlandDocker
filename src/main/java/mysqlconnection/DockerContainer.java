@@ -61,7 +61,7 @@ public class DockerContainer {
                 output.println(rs.getString(4));
                 System.out.println(rs.getString(5));
                 output.println(rs.getString(5));
-                JOptionPane.showMessageDialog(null, rs.getInt(1)+" "+rs.getString(2));
+                //JOptionPane.showMessageDialog(null, rs.getInt(1)+" "+rs.getString(2));
             }
             output.close();
 
