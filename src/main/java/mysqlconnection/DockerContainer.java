@@ -1,6 +1,8 @@
 package mysqlconnection;
 
 import javax.swing.*;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.sql.*;
 
 public class DockerContainer {
@@ -12,6 +14,7 @@ public class DockerContainer {
         final String USER = "root";
         final String PASS = "password";
         final String query = "SELECT * from contacts_tbl;";
+        String fileName = "data.txt";
         int id = 2;
         int[] contact_id;
         String[] contact_name;
@@ -29,6 +32,7 @@ public class DockerContainer {
             System.out.println("Connected Successfully");
 
             Statement stmt = conn.createStatement();
+            PrintWriter output = new PrintWriter(fileName);
 
             /*String updateQuery = "INSERT INTO contacts_tbl (contactID, contact_name, contact_lastname, contact_phoneNume, contact_email)" + "VALUES(3,'Deep','Li',1234567890,'haha@java.com')";
             stmt.executeUpdate(updateQuery);
@@ -48,13 +52,18 @@ public class DockerContainer {
 
             while(rs.next()){
                 System.out.println(rs.getInt(1));
+                output.println(rs.getInt(1));
                 System.out.println(rs.getString(2));
+                output.println(rs.getString(2));
                 System.out.println(rs.getString(3));
+                output.println(rs.getString(3));
                 System.out.println(rs.getString(4));
+                output.println(rs.getString(4));
                 System.out.println(rs.getString(5));
+                output.println(rs.getString(5));
                 JOptionPane.showMessageDialog(null, rs.getInt(1)+" "+rs.getString(2));
             }
-
+            output.close();
 
             //rs.close();
             //stmt.close();
@@ -63,6 +72,8 @@ public class DockerContainer {
         }catch (SQLException e){
             e.printStackTrace();;
         }catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }catch (FileNotFoundException e){
             e.printStackTrace();
         }
 
